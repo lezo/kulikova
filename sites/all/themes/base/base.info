@@ -1,0 +1,21 @@
+name = Base
+core = 7.x
+stylesheets[all][] = styles/base.css
+stylesheets[all][] = styles/contact.css
+stylesheets[all][] = styles/style.css.less
+stylesheets[print][] = styles/print.css
+
+scripts[] = js/jquery.bpopup.min.js
+scripts[] = js/init.js
+
+
+regions[header] = Header
+regions[slider] = Slider
+regions[info_blocks] = Info blocks
+regions[application_form] = Application form
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[footer] = Footer
+regions[help] = Help

@@ -1,0 +1,57 @@
+
+#webform-client-form-310 p, 
+#webform-client-form-310 label,
+#webform-client-form-310 legend,
+#webform-client-form-312 p, 
+#webform-client-form-312 label,
+#webform-client-form-312 legend { font: 1.5em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; }
+
+#webform-client-form-310 h1,
+#webform-client-form-312 h1 { margin: 10px 0 10px; font-size: 24px; color: #333333; }
+
+#webform-client-form-310 hr ,
+#webform-client-form-312 h1{ color: inherit; height: 0; margin: 6px 0 6px 0; padding: 0; border: 1px solid #d9d9d9; border-style: none none solid; }
+
+#webform-client-form-310, #webform-client-form-312 { display: block; width: 550px; margin: 10px auto; padding: 25px; border: 1px solid #cbcbcb; background-color: #FFF; -webkit-border-radius:5px;  }
+
+/* Form style */
+
+.node-type-webform  .webform-client-form label { 
+	color: #666;
+    display: inline-block;
+    float: left;
+    font-size: 14px !important;
+    padding: 10px 0;
+    width: 200px;
+    margin-right: 10px;
+}
+.node-type-webform  input, .node-type-webform  textarea, .node-type-webform  select { width: 280px; margin: 0; padding: 5px; color: #666; background: #f5f5f5; border: 1px solid #ccc; margin: 0 0 5px; font:1.5em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif; -webkit-border-radius:5px; }
+.node-type-webform  textarea{ width: 280px !important;}
+.node-type-webform  input:focus, textarea:focus, select:focus { border: 1px solid #999; background-color: #fff; color:#333; }
+.node-type-webform  input.submit { width: 85px; cursor: pointer; border: 1px solid #222; background:#333; color:#fff; }
+.node-type-webform  input.submit:hover { background:#444; }
+.node-type-webform  input[type="submit"][disabled] { background:#888; }
+.node-type-webform  fieldset { padding:20px; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; }
+.node-type-webform  legend { padding:7px 10px; font-weight:bold; color:#000; border:1px solid #eee; -webkit-border-radius:5px; -moz-border-radius:5px; margin-bottom:0 !important; margin-bottom:20px; }
+
+.node-type-webform  span.required{ font-size: 13px; color: #ff0000; } /* Select the colour of the * if the field is required. */
+
+.node-type-webform  input#edit-submit{
+	background: #ddd;
+	width: 200px;
+	padding: 10px;
+}
+input#edit-submitted-tovar:focus{
+	background: none repeat scroll 0 0 #F5F5F5;
+    border: 1px solid #CCCCCC;
+}
+.node-type-webform input#edit-submit:hover{
+	cursor: pointer;
+	background: #999;
+	color: #fff;
+}
+
+.node-type-webform .messages.error { line-height: 15px; background-color: #FBE3E4; padding: 3px 10px 3px 35px; color:#8a1f11;border: 1px solid #FBC2C4; }
+
+.node-type-webform .messages.error li { color:#8a1f11; }
+

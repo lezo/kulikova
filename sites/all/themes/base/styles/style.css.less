@@ -1,0 +1,1823 @@
+@import "variables.less";
+@import "mixin.less";
+@import "layouts.less";
+
+body {
+  color: #000;
+  font-family: 'Segoe UI normal';
+  font-size: 10px;
+}
+
+ul li.leaf {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+#wrapper {
+  background: #fff;
+}
+
+#container {
+  background-color: #FFFFFF;
+}
+
+#tabs-wrapper {
+  h1 {
+    color: #000000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    display: none;
+  }
+}
+
+h2 {
+  font-size: 16px;
+  color: #000;
+}
+
+.slider {
+  h1 {
+    display: none;
+  }
+}
+
+.node-type-page {
+  .slider {
+    position: relative;
+    clear: both;
+    z-index: 30;
+    background: #91cc8b;
+    padding: 15px 0;
+    h1 {
+      display: block;
+      text-align: center;
+      font-family: 'Segoe UI Semibold';
+      font-size: 2.8em;
+      text-shadow: 1px 1px 1px #555555;
+      color: #fff;
+      font-weight: normal;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.feed-icon {
+  display: none;
+}
+
+/*---------------------------------  ШАПКА ----------------------------------*/
+.header_wrap {
+  position: relative;
+  height: 170px;
+  .b-s(0 0 20px #e6e6e6);
+  z-index: 40;
+}
+
+.not-front {
+  #wrapper {
+    .header_wrap {
+      .b-s(none);
+      height: 285px;
+      header {
+        height: 285px;
+      }
+    }
+  }
+}
+
+/* телефон в шапке*/
+#block-block-1 {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  .content {
+    font-family: 'BebasNeueRegular';
+    .smal_tel {
+      color: #000;
+      font-size: 2.6em;
+    }
+    .big_tel {
+      color: #91cc8b;
+      font-size: 4.5em;
+    }
+  }
+}
+
+/* заказ обратного звонка */
+#block-block-2 {
+  position: absolute;
+  top: 105px;
+  right: 230px;
+  .content {
+    .callback {
+      display: block;
+      background: url('images/heder_botton_bg.png') repeat-x top center;
+      color: #fff;
+      font-size: 1.4em;
+      height: 25px;
+      padding: 5px 15px 0;
+      border: 1px solid groove #87bd81;
+      text-decoration: none;
+      .b-r(1px);
+      &:hover {
+        border: 1px solid ridge #87bd81;
+        background: url('images/heder_botton_bg.png') repeat-x bottom center;
+
+      }
+    }
+  }
+}
+
+/* график работы и email*/
+#block-block-3 {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  .content {
+    font-size: 1.8em;
+    .schedule {
+      text-align: right;
+    }
+  }
+}
+
+#logo-floater {
+  width: 376px;
+  left: 4px;
+  position: absolute;
+  top: 45px;
+
+  img {
+    background: url("images/logo_bg.jpg") -50px -50px no-repeat;
+    width: 100%;
+  }
+  span {
+    float: left;
+    text-indent: 5px;
+    font-size: 1.8em;
+    color: #000;
+    font-family: 'Segoe UI normal' !important;
+    font-weight: normal;
+  }
+}
+
+/*Top-menu---->*/
+#block-multiblock-1 {
+  display: none;
+}
+
+#block-menu-menu-main {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  margin-bottom: 45px;
+  width: 100%;
+  .content {
+    border-top: 1px solid #ff4948;
+    width: 100%;
+    position: relative;
+    #carriage {
+      width: 100px;
+      height: 5px;
+      background: #ff4948;
+      position: absolute;
+      top: -5px;
+      display: block;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      float: left;
+      li {
+        float: left;
+        margin: 0 auto;
+        padding: 0;
+        a {
+
+          color: #1c2232;
+          font-size: 1.6em;
+          text-decoration: none;
+          font-family: 'Volkorn-Regular';
+          text-transform: uppercase;
+          margin: 0;
+          padding-top: 16px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+#block-block-9 {
+  display: none;
+}
+
+/*---------------------------------  ХЛЕБНЫЕ КРОШКИ ----------------------------------*/
+.breadcrumbs {
+  .region-breadcrumb{
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    .breadcrumb {
+      width: 80%;
+      font-size: 1.4em;
+      padding: 5px 0 15px 1%;
+      a {
+        color: #91CC8B;
+        font-size: 1.4em;
+        text-transform: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------  РЕГИОН СЛАЙДЕРА ----------------------------------*/
+.slider {
+  position: relative;
+  clear: both;
+  z-index: 30;
+  .region-slider {
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    .views-slideshow-controls-top {
+      .views-slideshow-controls-text-previous, .views-slideshow-controls-text-next {
+        position: absolute;
+        font-size: 0;
+        width: 50px;
+        height: 85px;
+        top: 185px;
+        z-index: 10;
+      }
+      .views-slideshow-controls-text-previous {
+        background: url("images/prev.png") top no-repeat;
+        left: 10px;
+        &:hover {
+          background: url("images/prev.png") bottom no-repeat;
+        }
+      }
+      .views-slideshow-controls-text-next {
+        right: 10px;
+        background: url("images/next.png") top no-repeat;
+        &:hover {
+          background: url("images/next.png") bottom no-repeat;
+        }
+      }
+      .views-slideshow-controls-text-pause {
+        display: none;
+      }
+    }
+    .flexslider {
+      background: none !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      position: relative;
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .views-field-body {
+        position: absolute;
+        top: 63px;
+        right: 10.41%;
+        width: 39%;
+        background: url('images/bslider_quotes_top.png') no-repeat left top, url('images/bslider_quotes_bottom.png') no-repeat right bottom #ff4948;
+        color: #fff;
+        font-size: 1.6em;
+        font-family: 'Segoe UI Semibold';
+        padding: 25px 30px 20px 50px;
+      }
+    }
+    .flexslider:hover .flex-prev {
+      display: none;
+    }
+    .flexslider .flex-prev {
+      display: none;
+    }
+    .flexslider:hover .flex-next {
+      display: none;
+    }
+    .flexslider .flex-next {
+      display: none;
+    }
+  }
+}
+
+/*---------------------------------  КОНТЕНТ ----------------------------------*/
+
+.not-front .slider {
+  position: relative;
+  clear: both;
+  z-index: 30;
+  background: #91cc8b;
+  .field-name-field-brief-description {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    text-align: center;
+    color: #fff;
+    padding: 15px 0;
+    h2 {
+      font-family: 'Segoe UI Semibold';
+      font-size: 2.8em;
+      text-shadow: 1px 1px 1px #555555;
+      color: #fff;
+      font-weight: normal;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+    p {
+      margin: 0;
+      font-size: 2.4em;
+      font-family: 'Segoe UI Semibold';
+      text-shadow: 1px 1px 1px #555555;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.node-service, .node-page {
+  max-width: 1200px;
+  min-width: 980px;
+  width: 98%;
+  padding-left: 1%;
+  .field-name-body {
+    font-size: 1.6em;
+  }
+  .field-name-field-cost-services {
+    width: 98%;
+    padding-left: 1%;
+    color: #1c2232;
+    font-size: 2em;
+    font-family: 'Segoe UI Semibold';
+    margin: 25px 0 15px;
+  }
+  .field-name-field-service-img {
+    width: 33.33%;
+    float: left;
+    margin-right: 8.33%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .field-name-field-price-list {
+    width: 58.34%;
+    float: right;
+    color: #494949;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 1.6em;
+        background: url('images/info_block_2_list_bg.png') 0px 10px no-repeat;
+        padding-left: 15px;
+      }
+    }
+    .list_footer {
+      color: #ff4948;
+      font-size: 1.6em;
+      font-family: 'Segoe UI Semibold';
+    }
+  }
+  .field-name-field-first-block, .field-name-field-second-blosk, .field-name-field-additional-price-list {
+    width: 100%;
+    clear: both;
+    float: left;
+    .block_title {
+      background: url("images/content_block_title.png") top left no-repeat;
+      color: #1c2232;
+      font-size: 2em;
+      padding: 25px 0 30px;
+      margin-top: 50px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 1.6em;
+        background: url('images/info_block_2_list_bg.png') 0px 10px no-repeat;
+        padding-left: 15px;
+      }
+    }
+    table {
+      width: 100%;
+      border: 0;
+      border-collapse: separate; /*Границы ячеек не склеиваются*/
+      border-spacing: 1px;
+      font-size: 1.4em;
+      tr {
+        width: 100%;
+        background: none;
+        vertical-align: middle;
+        th {
+          background: none repeat scroll 0 0 #FFEEC0;
+          border: medium none;
+          padding: 1%;
+        }
+        th.first {
+          .b-r(4px 0 0 4px);
+        }
+        th.last {
+          .b-r(0 4px 4px 0);
+        }
+        td {
+
+          padding: 1%;
+          .b-r(4px);
+        }
+      }
+      .odd {
+
+        td {
+          border: 1px solid #E5E5E5;
+          background: #fff;
+        }
+      }
+      .even {
+        td {
+          border: 1px solid #fff;
+          background: #F2F2F2;
+        }
+      }
+    }
+    .block_footer {
+      color: #ff4948;
+      font-size: 1.6em;
+      font-family: 'Segoe UI Semibold';
+    }
+  }
+}
+
+/*---------------------------------  РЕГИОН ИНФОБЛОКОВ ----------------------------------*/
+.info_blocks {
+  position: relative;
+  clear: both;
+  .b-s(0 0 20px #e6e6e6);
+  z-index: 40;
+  width: 100%;
+  float: left;
+  padding: 55px 0 60px 0;
+  .region-info-blocks {
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+
+    #block-block-4, #block-block-5, #block-block-8 {
+      .title {
+        padding-bottom: 15px;
+        background: url("images/info_block_title_bg.png") bottom left no-repeat;
+        font-family: 'Volkorn-Regular';
+        font-size: 2.4em;
+        color: #1c2232;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 0 0 30px 0;
+        line-height: normal;
+      }
+    }
+    #block-block-4 {
+      width: 28.42%;
+      float: left;
+      margin-left: 4%;
+      .content {
+        .info_block {
+          font-size: 1.4em;
+          color: #616369;
+          padding: 0 0 32px 58px;
+          margin-bottom: 35px;
+        }
+        .block_1 {
+          background: url("images/lock.png") left top no-repeat, url('images/info_block_bg.png') bottom left no-repeat;
+        }
+        .block_2 {
+          background: url("images/list.png") left top no-repeat, url('images/info_block_bg.png') bottom left no-repeat;
+        }
+        .block_3 {
+          background: url("images/no-name.png") left top no-repeat, url('images/info_block_bg.png') bottom left no-repeat;
+        }
+      }
+    }
+    #block-block-5 {
+      width: 28.42%;
+      float: left;
+      margin-left: 4.91%;
+      .content {
+        font-size: 1.4em;
+        color: #616369;
+        ul {
+          margin: 0;
+          li {
+            margin-bottom: 23px;
+            list-style: none;
+            background: url('images/info_block_2_list_bg.png') 0 0.5em no-repeat;
+            text-indent: 0.9em;
+          }
+        }
+      }
+    }
+    #block-block-8 {
+      width: 28.42%;
+      float: left;
+      margin-left: 4.91%;
+      .content {
+        .service {
+          background: url('images/block_service_bg.jpg') center right no-repeat;
+          ul {
+            li {
+              margin: 0 0 22px 0;
+              padding: 0;
+              list-style: none;
+              a {
+                background: url("images/service_li_bg.png") 0 -11px no-repeat;
+                font-family: 'Segoe UI Semibold';
+                text-transform: uppercase;
+                color: #91cc8b;
+                font-size: 1.4em;
+                text-indent: 0.7em;
+                &:hover {
+                  background: url("images/service_li_bg.png") 0 10px no-repeat;
+                  color: #ff4948;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+        .links {
+          clear: both;
+          padding-top: 20px;
+          a {
+            float: left;
+            display: block;
+            background: url('images/service_link_bg.jpg') top repeat-x;
+            border: 1px solid #fd2625 groove;
+            color: #fff;
+            text-align: center;
+            font-size: 1.4em;
+            text-decoration: none;
+            width: 29.91%;
+            padding: 7px 0 0 0;
+            height: 28px;
+            .b-s(0px 1px 1px #a2a2a2);
+            font-family: 'Segoe UI normal';
+            &:hover {
+              background: url('images/service_link_bg.jpg') bottom repeat-x;
+              border: 1px solid #fd2625 ridge;
+              .b-s(none);
+            }
+          }
+          .link_2 {
+            margin: 0 5.13%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------  РЕГИОН ФОРМЫ ----------------------------------*/
+.application_form {
+  position: relative;
+  clear: both;
+  background: url("images/application_form_bg.png");
+  .region-application-form {
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    .block-webform {
+      width: 53.75%;
+      margin-left: 17.5%;
+      .title {
+        font-size: 3em;
+        width: 62.95%;
+        padding: 30px 0;
+        font-family: 'Volkorn-Regular';
+        font-weight: normal;
+        text-align: center;
+        margin: 0;
+        float: right;
+
+      }
+      .webform-component-textfield, .webform-component-textarea,.webform-component-email, .donload {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 48px;
+        clear: both;
+        float: left;
+        label {
+          width: 27.90%;
+          float: left;
+          color: #010101;
+          font-size: 1.6em;
+          font-weight: normal;
+        }
+        input {
+          width: 62.95%;
+          height: 42px;
+          float: right;
+          font-size: 1.4em;
+          color: #a8a8a8;
+          padding: 12px;
+          border: 0;
+          border-bottom: 1px solid #94aa3e;
+          outline: none;
+          font-style: italic;
+        }
+        textarea {
+          width: 62.95%;
+          height: 222px;
+          max-width: 62.95%;
+          max-height: 222px;
+          float: right;
+          font-size: 1.4em;
+          color: #a8a8a8;
+          padding: 12px;
+          border: 0;
+          border-bottom: 1px solid #94aa3e;
+          outline: none;
+          font-style: italic;
+        }
+      }
+      .webform-component-textarea {
+        margin-bottom: 10px;
+      }
+      .donload {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 25px;
+        clear: both;
+        float: left;
+        span {
+          float: right;
+          cursor: pointer;
+          font-size: 1.4em;
+          color: #000;
+          font-style: italic;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      .form-managed-file {
+        width: 100%;
+        float: left;
+        text-align: right;
+        margin: 0;
+        margin-bottom: 25px;
+        clear: both;
+
+        .form-file {
+          display: none;
+        }
+        .form-submit {
+          display: none;
+        }
+      }
+      .form-actions {
+        clear: both;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 48px;
+        float: left;
+        .form-submit {
+          float: right;
+          display: block;
+          background: url('images/form_submit_bg.png') top repeat-x;
+          border: 1px solid #fd2625;
+          color: #fff;
+          text-align: center;
+          font-size: 2.4em;
+          text-decoration: none;
+          width: 62.95%;
+          padding: 0;
+          height: 55px;
+          .b-s(0px 1px 1px #7a8c34);
+          font-family: 'Segoe UI normal';
+          &:hover {
+            background: url('images/form_submit_bg.png') bottom repeat-x;
+            border: 1px solid #fd2625 ridge;
+            .b-s(none);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*Левая колонка----->*/
+
+/*Правая колонка*/
+
+/*Контент--->*/
+
+.front #tabs-wrapper h1 {
+  display: none;
+}
+
+.page-advanced-searching {
+  .view-production {
+    .view-header {
+      color: #6D6F6E;
+      font-family: Tahoma;
+      font-size: 12px;
+      padding-top: 10px;
+    }
+    .views-row {
+      border: 1px solid #B0ADAD;
+      .b-r(8px);
+      height: 115px;
+      margin: 10px 0;
+      padding: 15px 0;
+    }
+    .views-field-field-category-image {
+      float: left;
+      margin-right: 20px;
+    }
+    .views-field-name {
+      border-bottom: 2px solid red;
+      margin-left: 250px;
+      line-height: 17px;
+      a {
+        color: #FF0000;
+        font-family: Tahoma;
+        font-size: 19px;
+        font-style: italic;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+    .views-field-description {
+      margin: 5px 0;
+      color: #6D6F6E;
+      font-family: Tahoma;
+      font-size: 12px;
+    }
+  }
+}
+
+/*Footer---->*/
+footer {
+  background: #000;
+  clear: both;
+  margin-top: 5px;
+  .region-footer {
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    #block-block-6, #block-block-7 {
+      .content {
+        color: #fff;
+        font-size: 1.4em;
+        text-align: right;
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+    #block-block-6 {
+      float: left;
+      margin-left: 10px;
+      margin-top: 65px;
+    }
+    #block-block-7 {
+      float: right;
+      margin-top: 30px;
+      margin-right: 10px;
+    }
+  }
+}
+
+#block-webform-client-block-7 {
+  display: none;
+  padding: 20px;
+  background: url("images/application_form_bg.png");
+  .b-s(0 0 20px #94aa3e);
+  .b-close {
+    border-radius: 7px;
+    font-size: 1.6em;
+    padding: 4px 0 0 0;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 30px;
+    height: 25px;
+    background-color: #fd2625;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+  }
+  .webform-client-form {
+    .form-item {
+      margin-bottom: 20px;
+      float: left;
+      clear: both;
+      input {
+        width: 320px;
+        height: 42px;
+        float: right;
+        font-size: 1.4em;
+        color: #a8a8a8;
+        padding: 12px;
+        border: 0;
+        border-bottom: 1px solid #94aa3e;
+        outline: none;
+        font-style: italic;
+      }
+      textarea {
+        width: 320px;
+        height: 180px;
+        max-width: 320px;
+        max-height: 180px;
+        float: right;
+        font-size: 1.4em;
+        color: #a8a8a8;
+        padding: 12px;
+        border: 0;
+        border-bottom: 1px solid #94aa3e;
+        outline: none;
+        font-style: italic;
+      }
+    }
+    .form-actions {
+      clear: both;
+      width: 320px;
+      margin: 0;
+      float: left;
+      .form-submit {
+        float: right;
+        display: block;
+        background: url('images/form_submit_bg.png') top repeat-x;
+        border: 1px solid #fd2625;
+        color: #fff;
+        text-align: center;
+        font-size: 2em;
+        text-decoration: none;
+        width: 320px;
+        padding: 0;
+        height: 40px;
+        .b-s(0px 1px 1px #7a8c34);
+        font-family: 'Segoe UI normal';
+        &:hover {
+          background: url('images/form_submit_bg.png') bottom repeat-x;
+          border: 1px solid #fd2625 ridge;
+          .b-s(none);
+        }
+      }
+    }
+  }
+}
+
+#block-menu-menu-footer-menu {
+  position: absolute;
+  right: 90px;
+  top: 35px;
+  .content li {
+    float: left;
+    margin: 0 10px;
+    a {
+      color: #666;
+      font-size: 13px;
+      padding: 0 0 0 20px;
+      text-decoration: none;
+    }
+    a:hover, a.active {
+      color: #ddd;
+      text-decoration: underline;
+    }
+  }
+}
+
+/*modal*/
+html.iframe {
+  #toolbar, header, #sidebar-second, #sidebar-first, .region-topmenu {
+    display: none !important;
+  }
+  .page-node-114 #wrapper {
+    min-width: 670px !important;
+    width: 670px !important;
+  }
+  #wrapper {
+    min-width: 505px !important;
+    width: 505px !important;
+    background: none repeat scroll 0 0 #FFFFFF;
+    .b-s(none);
+    #container {
+      width: 505px !important;
+      margin: 0 !important;
+      padding-bottom: 0 !important;
+      .b-s(none);
+      #center {
+        background: none repeat scroll 0 0 #FFFFFF !important;
+        padding-bottom: 0 !important;
+      }
+      .breadcrumb {
+        display: none !important;
+      }
+      #squeeze {
+        padding: 0 !important;
+        margin: 0 !important;
+        .b-s(none);
+        #tabs-wrapper h1 {
+          padding-top: 0;
+        }
+        .node {
+          margin: 0 !important;
+        }
+      }
+    }
+    footer, #footwrap,
+    p#back-top, #comments {
+      display: none !important;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  #wrapper {
+    header {
+      max-width: 979px;
+      min-width: 768px;
+      height: 223px;
+      width: 100%;
+    }
+    #container {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+      margin: 0px auto;
+    }
+    > footer {
+      height: 136px;
+    }
+  }
+
+  /*---------------------------------  ШАПКА 980 ----------------------------------*/
+  .header_wrap {
+    position: relative;
+    height: 223px;
+    .b-s(none);
+    z-index: 40;
+  }
+
+  .not-front {
+    #wrapper {
+      .header_wrap {
+        .b-s(none);
+        height: 415px;
+        header {
+          height: 415px;
+        }
+      }
+    }
+  }
+
+  /* телефон в шапке*/
+  #block-block-1 {
+    position: absolute;
+    right: 0;
+    left: 10px;
+    top: 65px;
+    .content {
+      .big_tel {
+        font-size: 5em;
+      }
+    }
+  }
+
+  /* заказ обратного звонка */
+  #block-block-2 {
+    position: absolute;
+    top: 137px;
+    right: 373px;
+    .content {
+      .callback {
+        background: url('images/heder_botton_bg_980.png') repeat-x top center;
+        font-size: 1.6em;
+        height: 32px;
+        padding: 7px 25px 0;
+        &:hover {
+          background: url('images/heder_botton_bg_980.png') repeat-x bottom center;
+
+        }
+      }
+    }
+  }
+
+  /* график работы и email*/
+  #block-block-3 {
+    top: 60px;
+    right: 20px;
+    .content {
+      font-size: 1.8em;
+    }
+  }
+
+  #logo-floater {
+    position: relative;
+    margin: 20px auto 0;
+    left: 0px;
+    top: 0px;
+
+  }
+
+  /*Top-menu---->*/
+  #block-menu-menu-main {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+    .content {
+      width: 100%;
+      position: relative;
+      border: 0;
+      #carriage {
+        display: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        float: left;
+        li {
+          float: left;
+          margin: 0 auto;
+          padding: 0;
+          background: url('images/main_menu_bg.png') top repeat-x;
+          a {
+            color: #1c2232;
+            font-size: 1.6em;
+            text-decoration: none;
+            font-family: 'Volkorn-Regular';
+            text-transform: uppercase;
+            margin: 0;
+            padding-top: 16px;
+            padding-bottom: 40px;
+            position: relative;
+            top: -5px;
+            border-top: 5px solid #fff;
+          }
+          .active {
+            border-top: 5px solid #fd2625;
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  ХЛЕБНЫЕ КРОШКИ ----------------------------------*/
+  .breadcrumbs {
+    .region-breadcrumb{
+      max-width: 979px;
+      min-width: 768px;
+    }
+  }
+
+  /*---------------------------------  РЕГИОН СЛАЙДЕРА 980 ----------------------------------*/
+  .slider {
+    .region-slider {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+      .views-slideshow-controls-top {
+        .views-slideshow-controls-text-previous, .views-slideshow-controls-text-next {
+          top: 40%;
+        }
+        .views-slideshow-controls-text-previous {
+          background: url("images/prev.png") top no-repeat;
+          left: 20px;
+          &:hover {
+            background: url("images/prev.png") bottom no-repeat;
+          }
+        }
+        .views-slideshow-controls-text-next {
+          right: 20px;
+          background: url("images/next.png") top no-repeat;
+          &:hover {
+            background: url("images/next.png") bottom no-repeat;
+          }
+        }
+      }
+      .flexslider {
+        img {
+          width: 100% !important;
+          height: auto !important;
+        }
+        .views-field-body {
+          top: 30px;
+          right: 90px;
+          width: 32%;
+          font-size: 1.5em;
+          background: url('images/bslider_quotes_top_980.png') no-repeat left top, url('images/bslider_quotes_bottom_980.png') no-repeat right bottom #eac731;
+          color: #000;
+          font-style: italic;
+          padding: 30px 40px 30px 40px
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  КОНТЕНТ ----------------------------------*/
+  .not-front .slider {
+    .field-name-field-brief-description {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+      h2 {
+        width: 100%;
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }
+
+  .node-service, .node-page {
+    max-width: 979px;
+    min-width: 742px;
+    width: 94%;
+    padding-left: 3%;
+    .field-name-field-cost-services {
+    }
+    .field-name-field-service-img {
+      width: 40.8%;
+      margin-right: 8.16%;
+    }
+    .field-name-field-price-list {
+      width: 48.90%;
+      .list_footer {
+        width: 97%;
+      }
+    }
+    .field-name-field-first-block, .field-name-field-second-blosk,.field-name-field-additional-price-list{
+      width: 100%;
+      clear: both;
+      float: left;
+      .block_title {
+        background: url("images/content_block_title.png") top left no-repeat;
+        color: #1c2232;
+        font-size: 2em;
+        padding: 25px 0 30px;
+        margin-top: 50px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+        }
+      }
+      table {
+        width: 98%;
+        font-size: 1.3em;
+        tr {
+          th {
+            padding: 1% 0;
+          }
+        }
+      }
+      .block_footer {
+        color: #ff4948;
+        font-size: 1.6em;
+        font-family: 'Segoe UI Semibold';
+      }
+    }
+  }
+
+  /*---------------------------------  РЕГИОН БЛОКОВ 980----------------------------------*/
+  .info_blocks {
+
+    .b-s(none);
+    padding: 60px 0 60px 0;
+    .region-info-blocks {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+
+      #block-block-4, #block-block-5, #block-block-8 {
+      }
+      #block-block-4 {
+        width: 41.43%;
+        float: left;
+        margin-left: 8.57%;
+        .content {
+          .info_block {
+            font-size: 1.6em;
+            padding: 0 0 32px 58px;
+            margin-bottom: 27px;
+          }
+          .block_1 {
+            background: url("images/lock.png") left top no-repeat, url('images/info_block_bg_980.png') bottom left no-repeat;
+          }
+          .block_2 {
+            background: url("images/list.png") left top no-repeat, url('images/info_block_bg_980.png') bottom left no-repeat;
+          }
+          .block_3 {
+            background: url("images/no-name.png") left top no-repeat, url('images/info_block_bg_980.png') bottom left no-repeat;
+          }
+        }
+      }
+      #block-block-5 {
+        width: 41.43%;
+        margin-left: 8.57%;
+        .content {
+          font-size: 1.6em;
+          ul {
+            margin: 0;
+            li {
+              margin-bottom: 25px;
+              background: url('images/info_block_2_list_bg.png') 0 0.7em no-repeat;
+              width: 98%;
+            }
+          }
+        }
+      }
+      #block-block-8 {
+        width: 409px;
+        float: left;
+        margin-left: 285px;
+        margin-top: 60px;
+        .content {
+          .service {
+            ul {
+              li {
+                a {
+                  font-size: 1.6em;
+                }
+              }
+            }
+          }
+          .links {
+            padding-top: 40px;
+            a {
+              background: url('images/service_link_bg_980.png') top repeat-x;
+              font-size: 1.6em;
+              width: 117px;
+              height: 33px;
+              &:hover {
+                background: url('images/service_link_bg_980.png') bottom repeat-x;
+              }
+            }
+            .link_2 {
+              margin: 0 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  РЕГИОН ФОРМЫ 980----------------------------------*/
+  .application_form {
+    .region-application-form {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+      .block-webform {
+        width: 63.47%;
+        margin-left: 7.14%;
+        .title {
+        }
+        .clientside-error{
+          position: absolute;
+        }
+        .webform-component-textfield, .webform-component-textarea,.webform-component-email, .donload {
+          margin-bottom: 35px;
+          label {
+            margin: 0;
+            width: 33%;
+          }
+          input {
+            width: 65%;
+          }
+          textarea {
+            width: 65%;
+            max-width: 65%;
+          }
+        }
+        .webform-component-textarea {
+          margin-bottom: 5px;
+        }
+        .donload {
+          margin-bottom: 5px;
+        }
+        .form-managed-file {
+        }
+        .form-actions {
+          margin: 0;
+          margin-bottom: 20px;
+          .form-submit {
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  РЕГИОН ПОДВАЛА 980----------------------------------*/
+  footer {
+
+    .region-footer {
+      max-width: 979px;
+      min-width: 768px;
+      width: 100%;
+      #block-block-6, #block-block-7 {
+        .content {
+          font-size: 1.6em;
+        }
+      }
+      #block-block-6 {
+        margin-top: 75px;
+        margin-left: 20px
+      }
+      #block-block-7 {
+        margin-top: 30px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+
+  #wrapper {
+    header {
+      height: 440px;
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+    }
+    #container {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      margin: 0px auto;
+    }
+    > footer {
+      height: 165px;
+    }
+  }
+
+  /*---------------------------------  ШАПКА 360----------------------------------*/
+  .header_wrap {
+    height: 300px;
+    .b-s(none);
+  }
+
+  .not-front {
+    #wrapper {
+      .header_wrap {
+        .b-s(none);
+        height: 400px;
+        header {
+          height: 400px;
+        }
+      }
+    }
+  }
+
+  #block-multiblock-1 {
+    position: absolute;
+    bottom: -292px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    .content {
+      border: 1px solid #c3c3c3;
+      border-top: 0;
+      width: 100%;
+      position: relative;
+      ul {
+        margin: 0;
+        padding: 0;
+        float: none;
+        li {
+          float: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          a {
+            color: #1c2232;
+            text-align: center;
+            font-size: 1.6em;
+            text-decoration: none;
+            font-family: 'Volkorn-Regular';
+            text-transform: uppercase;
+            margin: 0;
+            padding: 10px 0;
+            position: relative;
+          }
+          .active {
+            color: #91cc8b;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  /* телефон в шапке*/
+  #block-block-1 {
+    width: 200px;
+    position: absolute;
+    top: 165px;
+  }
+
+  /* заказ обратного звонка */
+  #block-block-2 {
+    top: 235px;
+    right: 58px;
+    .content {
+      .callback {
+        background: url('images/heder_botton_bg_360.png') repeat-x top center;
+        font-size: 1.6em;
+        height: 30px;
+        padding: 5px 20px 0;
+        &:hover {
+          background: url('images/heder_botton_bg_360.png') repeat-x bottom center;
+
+        }
+      }
+    }
+  }
+
+  /* график работы и email*/
+  #block-block-3 {
+    top: 110px;
+    right: 85px;
+    .content {
+      .schedule {
+        text-align: center;
+      }
+    }
+  }
+
+  #logo-floater {
+    position: relative;
+    margin: 20px auto 0;
+    left: 0px;
+    top: 0px;
+    img {
+      background: url("images/logo_bg.jpg") -100px -100px no-repeat;
+      width: 100% !important;
+    }
+    span {
+      text-indent: 0px;
+      font-size: 1.5em;
+    }
+  }
+
+  #block-block-9 {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    width: 340px;
+    .b-s(1px 1px 1px #333);
+    background: #ff4948;
+    text-align: center;
+    cursor: pointer;
+    .content {
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 2.4em;
+        padding-top: 10px;
+        height: 45px;
+      }
+    }
+  }
+
+  /*---------------------------------  ХЛЕБНЫЕ КРОШКИ ----------------------------------*/
+  .breadcrumbs {
+    .region-breadcrumb{
+      max-width: 767px;
+      min-width: 360px;
+    }
+  }
+
+  /*---------------------------------  РЕГИОН СЛАЙДЕРА 360----------------------------------*/
+  .slider {
+    .region-slider {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      .views-slideshow-controls-top {
+        .views-slideshow-controls-text-previous, .views-slideshow-controls-text-next {
+          top: 30%;
+        }
+      }
+      .flexslider {
+        img {
+          height: auto !important;
+          width: 130% !important;
+        }
+        .views-field-field-main-page-image {
+          overflow-x: hidden;
+        }
+        .views-field-body {
+          position: relative;
+          top: 0;
+          right: 0;
+          clear: both;
+          float: left;
+          width: 90%;
+          background: url('images/bslider_quotes_top_360.png') no-repeat left top, url('images/bslider_quotes_bottom_360.png') no-repeat right bottom #eac731;
+          color: #000;
+          padding: 30px 5% 30px 5%;
+          margin: 0;
+          font-size: 1.6em;
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  КОНТЕНТ ----------------------------------*/
+  .not-front .slider {
+    .field-name-field-brief-description {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      h2 {
+        width: 100%;
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }
+
+  .node-service, .node-page {
+    max-width: 767px;
+    min-width: 360px;
+    padding: 0;
+    width: 100%;
+    padding-left: 0;
+    .field-name-body {
+      width: 98%;
+      padding-left: 1%;
+    }
+    .field-name-field-cost-services {
+    }
+    .field-name-field-service-img {
+      width: 44.4%;
+      margin-right: 5.5%;
+    }
+    .field-name-field-price-list {
+      width: auto;
+      float: none;
+      color: #494949;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: disc;
+        li {
+          width: 93%;
+          margin: 0 0 0 7%;
+          padding: 0;
+          margin-bottom: 15px;
+          font-size: 1.6em;
+          background: none;
+          padding-left: 0;
+        }
+      }
+      .list_footer {
+        color: #ff4948;
+        font-size: 1.6em;
+        font-family: 'Segoe UI Semibold';
+      }
+    }
+    .field-name-field-first-block, .field-name-field-second-blosk,.field-name-field-additional-price-list {
+      width: 98%;
+      padding-left: 1%;
+      clear: both;
+      float: left;
+      .block_title {
+        background: url("images/content_block_title.png") top left no-repeat;
+        color: #1c2232;
+        font-size: 2em;
+        padding: 25px 0 30px;
+        margin-top: 50px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+        }
+      }
+      table {
+        width: 100%;
+        font-size: 1em;
+        tr {
+          th {
+            padding: 1% 0;
+            word-wrap: break-word;
+          }
+          td{
+            padding:1% 0 1% 1%;
+          }
+        }
+      }
+      .block_footer {
+        color: #ff4948;
+        font-size: 1.6em;
+        font-family: 'Segoe UI Semibold';
+      }
+    }
+  }
+
+  /*---------------------------------  РЕГИОН ИНФОБЛОКОВ 360----------------------------------*/
+  .info_blocks {
+    .b-s(none);
+    padding: 45px 0 35px 0;
+    .region-info-blocks {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      #block-block-4 {
+        width: 94%;
+        margin-left: 3%;
+        .content {
+          .info_block {
+            font-size: 1.6em;
+            padding: 0 0 32px 58px;
+            margin-bottom: 27px;
+          }
+        }
+      }
+      #block-block-5 {
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 23px;
+        .content {
+          font-size: 1.6em;
+        }
+      }
+      #block-block-8 {
+        width: 94%;
+        margin-left: 3%;
+        margin-top: 50px;
+        .content {
+          .service {
+            ul {
+              li {
+                a {
+                  font-size: 1.6em;
+                }
+              }
+            }
+          }
+          .links {
+            padding-top: 50px;
+            a {
+              background: url('images/service_link_bg_360.png') top repeat-x;
+              font-size: 1.5em;
+              width: 28.3%;
+              padding: 7px 0 0 0;
+              height: 30px;
+              &:hover {
+                background: url('images/service_link_bg_360.png') bottom repeat-x;
+              }
+            }
+            .link_2 {
+              margin: 0 7.55%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*---------------------------------  РЕГИОН ФОРМЫ ----------------------------------*/
+  .application_form {
+
+    .region-application-form {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      .block-webform {
+        width: 94%;
+        margin-left: 3%;
+        .title {
+          font-size: 3em;
+          padding: 30px 0 20px;
+          margin: 0;
+          width: 100%;
+          text-align: center;
+        }
+        .webform-component-textfield, .webform-component-textarea,.webform-component-email, .donload, .donload_file {
+          width: 100%;
+          margin-bottom: 28px;
+
+          label {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 5px;
+          }
+          input {
+            width: 100%;
+            float: left;
+          }
+          textarea {
+            width: 100%;
+            max-width: 100%;
+          }
+        }
+        .webform-component-textarea {
+          margin-bottom: 10px;
+        }
+        .donload {
+          width: 100%;
+          margin-bottom: 0;
+          span {
+            font-size: 1.6em;
+          }
+        }
+        .form-managed-file {
+          width: 100%;
+        }
+        .form-actions {
+          width: 100%;
+          margin-bottom: 35px;
+          .form-submit {
+            font-size: 2em;
+            width: 100%;
+            height: 45px;
+            padding: 0 0 5px 0;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+
+    .region-footer {
+      max-width: 767px;
+      min-width: 360px;
+      width: 100%;
+      #block-block-6, #block-block-7 {
+        .content {
+          font-size: 1.6em;
+        }
+      }
+      #block-block-6 {
+        margin-top: 25px;
+        margin-left: 0px;
+        width: 100%;
+        p {
+          text-align: center;
+        }
+      }
+      #block-block-7 {
+        margin-top: 25px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+}
