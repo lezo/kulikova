@@ -1,0 +1,184 @@
+<?php
+// $Id: cloud_zoom.module,v 1.3 2010/06/04 21:00:25 njt1982 Exp $
+
+/**
+ * @file
+ * This module integrates the Cloud Zoom JQuery library from:
+ * http://www.professorcloud.com/mainsite/cloud-zoom.htm
+ */
+
+
+/**
+ * Implementation of hook_requirements().
+ */
+function cloud_zoom_requirements($phase) {
+  if ($phase == 'runtime') {
+    $files_present = _cloud_zoom_files_present();
+
+    return array(
+      'cloud_zoom_sourcefiles' => array(
+        'title' => t('Cloud Zoom - Sourcecode downloaded and present'),
+        'value' => $files_present ? t('Files Present') : t('Files Missing'),
+        'description' => $files_present ? NULL : t('Have the sourcecode files for Cloud Zoom been downloaded from <a href="http://www.professorcloud.com/mainsite/cloud-zoom.htm">Professor Cloud</a>'),
+        'severity' => $files_present ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+      ),
+    );
+  }
+}
+
+/*
+ * sas
+ */ 
+function cloud_zoom_menu(){
+  	$items['admin/config/media/cloud_zoom'] = array(
+    'title' => 'Cloud zoom',
+    'description' => 'Settings for cloud zoom.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cloud_zoom_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'cloud_zoom.admin.inc',
+	);
+   return $items; 
+} 
+
+/**
+ * Internal Helper function to check if the required source code is present
+ */
+function _cloud_zoom_files_present() {
+  $path = drupal_get_path('module', 'cloud_zoom');
+  return (file_exists($path .'/cloud-zoom/cloud-zoom.1.0.2.js') && file_exists($path .'/cloud-zoom/cloud-zoom.css'));
+}
+
+
+/**
+ * Implementation of hook_field_formatter().
+ */
+function cloud_zoom_field_formatter_info() {
+  $formatters = array();
+
+  // Load the rules and build a "grid" of a->b settings.
+  $rules = image_styles();
+  foreach ($rules as $outer_preset_id => $outer_preset_info) {
+    foreach ($rules as $inner_preset_id => $inner_preset_info) {
+      $formatters['image__cloud_zoom__'. $outer_preset_id .'__'. $inner_preset_id] = array(
+        'label' => t('Cloud Zoom: !outer -> !inner', array('!outer' => $outer_preset_id, '!inner' => $inner_preset_id)),
+        'field types' => array('image'),
+      );
+    }
+  }
+
+  return $formatters;
+}
+/**
+ * Allow formatters to load information for field values being displayed. 
+*/
+function cloud_zoom_field_formatter_prepare_view($entity_type, $entities, $field, $instances, $langcode, &$items, $displays) {
+	$images = current($items);
+	$key = key($items);
+	if(is_array($images) && count($images) > 1){
+		$images = array_merge(array($images[0]), $images);
+		$items[$key] = $images;
+	}
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function cloud_zoom_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  // Check if the formatter involves a particular image style.
+  $matches = array();
+  if (preg_match('/__([a-z0-9_]+)/', $display['type'], $matches)) {
+    $image_style = $matches[1];
+  }
+
+  // Break out the view and zoom presets
+  list($tmp, $cloud_zoom_type, $view_preset, $zoom_preset) = explode('__', $display['type'], 4);
+
+  // Build elements for each item
+  $id = uniqid('zoom');
+  foreach ($items as $delta => $item) {
+    $element[$delta] = array(
+      '#theme' => 'cloud_zoom_image',
+      '#item' => $item,
+      '#id' => $id,
+      '#delta' => $delta,
+      '#view_preset' => $view_preset,
+      '#zoom_preset' => $zoom_preset,
+    );
+  }
+  return $element;
+}
+
+
+/**
+ * Implementation of hook_theme().
+ */
+function cloud_zoom_theme() {
+  // Define a base theme handler
+  return array(
+    'cloud_zoom_image' => array(
+      'variables' => array('item' => NULL, 'id' => null, 'delta' => 0, 'view_preset' => NULL, 'zoom_preset' => NULL),
+    ),
+  );
+}
+
+
+/**
+ * Theme handler for the cloud_zoom effect
+ */
+function theme_cloud_zoom_image($variables) {
+  // Add the cloud zoom JS and CSS
+  drupal_add_js(drupal_get_path('module', 'cloud_zoom') .'/cloud-zoom/cloud-zoom.1.0.2.js');
+  drupal_add_css(drupal_get_path('module', 'cloud_zoom') .'/cloud-zoom/cloud-zoom.css');
+
+  
+  
+  $item = $variables['item'];
+
+  $image = array(
+    'path' => $item['uri'],
+  );
+
+  // Do not output an empty 'title' attribute.
+  if (drupal_strlen($item['title']) > 0) {
+    $image['title'] = $item['title'];
+  }
+   // Build a Zoomed In URL path
+  $href = image_style_url($variables['zoom_preset'], $item['uri']);
+  $href = file_create_url($href);
+	// add for $delta = 0 : rel="adjustX: 10, adjustY:-4, zoomWidth: 400"
+ 
+  if($variables['delta'] == 0){
+  	$image['style_name'] = $variables['view_preset'];
+  	$attributes = array(
+  	'class' => 'cloud-zoom',
+  	'id' => $variables['id'],
+  	);
+  	$attributes['rel'] = "tint: '" . variable_get('cloud_zoom_tint', false) . "'," . " zoomHeight: '" . variable_get('cloud_zoom_zoom_height', 'auto') . "'," . " zoomWidth: '" . variable_get('cloud_zoom_zoom_width', 'auto') . "'";
+    if($item['title']){
+  		$attributes['title'] = $item['title'];
+  	}
+  	
+  } else {
+  	$image['style_name'] = variable_get('cloud_zoom_image_style_tiny', 'thumbnail');
+  	$small_url = image_style_url($variables['view_preset'], $item['uri']);
+  	$small_url = file_create_url($small_url);
+  	$attributes = array(
+  	'class' => 'cloud-zoom-gallery',
+  	);
+  	$attributes['rel'] = "useZoom: '" . $variables['id'] . "'," . " smallImage: '" . $small_url . "'";
+  	if($item['title']){
+  		$attributes['title'] = t('Thumbnail !title', array('!title' => drupal_strtolower($item['title'])));
+  	}
+//  		<a href='/images/zoomengine/bigimage00.jpg' class='cloud-zoom-gallery' title='Thumbnail 1'
+//        	rel="useZoom: 'zoom1', smallImage: '/images/zoomengine/smallimage.jpg' ">
+//        <img src="/images/zoomengine/tinyimage.jpg" alt = "Thumbnail 1"/></a>
+  }
+   // Theme the preview image using an image style
+  $link_content = theme('image_style', $image);
+
+  // Return the preview image as a link to the larger image with a cloud-zoom CSS class
+  return l($link_content, $href, array('html' => TRUE, 'attributes' => $attributes));
+}

@@ -1,0 +1,4 @@
+name = fb
+description = "For FirePHP"
+core = 7.x
+version = "7.x-0.1"

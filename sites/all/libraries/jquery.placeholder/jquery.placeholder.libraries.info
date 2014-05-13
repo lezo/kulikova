@@ -1,0 +1,4 @@
+name = cssua
+version = 7.х-0.1
+files[js][] = jquery.placeholder.js
+files[js][] = placeholder.js
