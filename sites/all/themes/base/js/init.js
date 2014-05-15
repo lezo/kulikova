@@ -607,6 +607,9 @@
             h = $(this).height();
             $(this).css('margin-top', -h/2);
         });
+
+
+
         /**
          *  отладочное
          */
