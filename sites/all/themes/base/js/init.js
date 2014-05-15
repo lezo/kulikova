@@ -546,6 +546,67 @@
             event.stopPropagation();
         });
 
+
+        /*----------------------- PLACEHOLDER ------------------------*/
+        function placeholder(formId){
+
+            if (typeof formId === 'undefined')
+            {
+                formId = '.webform-client-form';
+            }
+
+            $(formId+' label').each(function(i){
+                var label=this;
+                var input=$("#"+($(this).attr('for')).toString());
+                $(input).blur(function(){
+                    $(input).removeClass("focus");
+                    if($(input).attr("value")==""){
+                        $(label).stop();
+                        $(label).animate({"opacity":1},0);
+                    }
+                });
+                $(input).focus(function() {
+                    $(input).addClass("focus")
+                });
+                if ($(input).attr("value")!=""){
+                    $(label).css("opacity",0);
+
+                }
+                $(input).bind('mouseover', function (){
+                    $(label).stop();
+                    $(label).animate({"opacity":0},0);
+                    $(formId+' label').css("cursor","text");
+                });
+                $(input).bind("mouseout", function (){
+                    if (!$(input).hasClass("focus")){
+                        if($(input).attr("value")==""){
+                            $(label).stop();
+                            $(label).animate({"opacity":1},0);
+                        }
+                    }
+                });
+                $(input).bind('keyup', function (){
+
+                    if($(input).attr("value")==""){
+                        $(label).stop();
+                        $(label).animate({"opacity":0},0);
+                    }
+                    else {
+                        $(label).stop();
+                        $(label).animate({"opacity":0},0);
+                    }
+                });
+            });
+        }
+
+        placeholder('#webform-client-form-20');
+        placeholder('#block-webform-client-block-21');
+        placeholder('#block-multiblock-3');
+
+        $('#block-block-18 .lending-4-list p').each(function(){
+            h = $(this).height();
+            $(this).css('margin-top', -h/2);
+        });
         /**
          *  отладочное
          */
