@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir;?>">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
