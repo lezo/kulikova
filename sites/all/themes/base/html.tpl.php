@@ -6,7 +6,7 @@ $node = menu_get_object();
 <head>
 
   <?php
-    if($node->vid != 10){
+    if(@$node->vid != 10){
   ?>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php
